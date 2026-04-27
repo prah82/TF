@@ -22,7 +22,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #3d3d3d; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #292929; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #379c0c; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: color-mix(in srgb, #0b1f46 80%, #f2c14e 20%); /* 80% navy blue + 20% yellow */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -34,7 +34,7 @@
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #3d3d3d; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #379c0c; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: var(--accent-color); /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -148,7 +148,7 @@ h6 {
   --heading-color: #ffffff;
   --surface-color: #1b1933;
   color: var(--default-color);
-  background: linear-gradient(90deg, #e2cf80 0%, #0b1f46 46%, #203c63 74%, #242647 100%);
+  background: linear-gradient(90deg, #f1ecd3 0%, #0b1f46 46%, #242647 100%);
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -1575,7 +1575,7 @@ section,
   position: absolute;
   top: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #0b1f46 80%, #f2c14e 100%);
   color: var(--contrast-color);
   font-size: 11px;
   font-weight: 700;
