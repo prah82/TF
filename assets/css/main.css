@@ -148,7 +148,7 @@ h6 {
   --heading-color: #ffffff;
   --surface-color: #1b1933;
   color: var(--default-color);
-  background-color: var(--background-color);
+  background: linear-gradient(90deg, #e2cf80 0%, #0b1f46 46%, #203c63 74%, #242647 100%);
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
