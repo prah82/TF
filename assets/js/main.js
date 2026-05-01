@@ -116,10 +116,24 @@
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+    const isotopeContainer = isotopeItem.querySelector('.isotope-container');
+
+    const updatePortfolioItemWidths = function(activeFilter) {
+      isotopeContainer.querySelectorAll('.portfolio-item').forEach(function(item) {
+        if (activeFilter === '*') {
+          item.classList.add('col-lg-6', 'col-md-6');
+          item.classList.remove('col-lg-12', 'col-md-12');
+        } else {
+          item.classList.add('col-lg-12', 'col-md-12');
+          item.classList.remove('col-lg-6', 'col-md-6');
+        }
+      });
+    };
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+    imagesLoaded(isotopeContainer, function() {
+      updatePortfolioItemWidths(filter);
+      initIsotope = new Isotope(isotopeContainer, {
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
@@ -129,10 +143,12 @@
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
       filters.addEventListener('click', function() {
+        const activeFilter = this.getAttribute('data-filter');
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
+        updatePortfolioItemWidths(activeFilter);
         initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+          filter: activeFilter
         });
         if (typeof aosInit === 'function') {
           aosInit();

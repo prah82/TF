@@ -148,15 +148,16 @@ h6 {
   --heading-color: #ffffff;
   --surface-color: #1b1933;
   color: var(--default-color);
-  background: linear-gradient(90deg, #f1ecd3 0%, #0b1f46 46%, #242647 100%);
+  background:  linear-gradient(90deg, #f1ecd3 0%, #0b1f46 46%, #242647 100%);
   padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
+  
 }
 
 .header .logo {
   line-height: 1;
-  opacity: 0.72;
+  opacity: 0.99;
   transition: opacity 0.3s ease;
 }
 
@@ -3025,6 +3026,10 @@ section,
 
 .team .join-team-banner {
   margin-top: 60px;
+  width: calc(100vw - 18vw);
+  margin-left: 0%;
+  transform: translateX(-50%);
+  max-width: 90vw;
   background: linear-gradient(120deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 25%) 100%);
   border-radius: 24px;
   padding: 60px;
@@ -3034,6 +3039,10 @@ section,
 
 @media (max-width: 768px) {
   .team .join-team-banner {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+    max-width: 100%;
     padding: 40px 30px;
   }
 }
@@ -3056,6 +3065,7 @@ section,
   justify-content: space-between;
   gap: 40px;
 }
+
 
 @media (max-width: 992px) {
   .team .join-team-banner .banner-content {
