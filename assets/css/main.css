@@ -23,8 +23,10 @@
   --default-color: #3d3d3d; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #292929; /* Color for headings, subheadings and title throughout the website */
   --accent-color: color-mix(in srgb, #0b1f46 80%, #f2c14e 20%); /* 80% navy blue + 20% yellow */
+  --circle-color: color-mix(in srgb, white 88% , #0b1f46); /* A lighter version of the accent color, used for decorative circular elements in the background of sections. */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contrast-color: #f8f8f8; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contra-color:black
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -159,6 +161,7 @@ h6 {
   line-height: 1;
   opacity: 0.99;
   transition: opacity 0.3s ease;
+  border-radius: 20px;
 }
 
 .header .logo:hover {
@@ -166,8 +169,18 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 30px;
+  max-height: 95px;
+  width: 70px;
   margin-right: 8px;
+   border-radius: 15px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.header .logo:hover img {
+   border-radius: 14px;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55));
+  transform: translateY(-1px);
 }
 
 .header .logo h1 {
@@ -1026,6 +1039,8 @@ section,
   overflow: hidden;
   height: 100%;
   min-height: 128px;
+  aspect-ratio: 16 / 7;
+  background: #0a1731;
 }
 
 .hero .media-block img {
@@ -1038,6 +1053,7 @@ section,
 .hero .media-block .hero-carousel .carousel-inner,
 .hero .media-block .hero-carousel .carousel-item {
   height: 100%;
+  min-height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -1048,6 +1064,10 @@ section,
 }
 
 .hero .media-block .hero-carousel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -1599,7 +1619,7 @@ section,
 # Services Section
 --------------------------------------------------------------*/
 .services .service-card {
-  background: var(--surface-color);
+  background-color: var(--surface-color);
   border-radius: 20px;
   padding: 30px;
   height: 100%;
@@ -1607,6 +1627,19 @@ section,
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   transition: all 0.4s ease;
   overflow: hidden;
+  isolation: isolate;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.services .service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(4, 16, 38, 0.84) 15%, rgba(4, 16, 38, 0.58) 70%, rgba(4, 16, 38, 0.46) 100%);
+  z-index: -1;
+  transition: background 0.35s ease;
 }
 
 .services .service-card::after {
@@ -1623,38 +1656,59 @@ section,
 
 .services .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 25px 50px color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 25px 50px color-mix(in srgb, var(--default-color), transparent 80%);
   border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+.service-card .card-body h4 a:hover {
+  color:rgb(255, 42, 42);
 }
 
 .services .service-card:hover::after {
   transform: scaleX(1);
 }
 
+.services .service-card:hover::before {
+  background: linear-gradient(160deg, rgba(4, 16, 38, 0.72) 15%, rgba(4, 16, 38, 0.45) 70%, rgba(4, 16, 38, 0.3) 100%);
+}
+
 .services .service-card:hover .icon-circle {
-  background: var(--accent-color);
+  background: var(--circle-color);
   transform: rotate(10deg);
 }
 
 .services .service-card:hover .icon-circle i {
-  color: var(--contrast-color);
+  color: var(--contra-color);
 }
 
 .services .service-card:hover .card-link {
-  color: var(--accent-color);
+  color: var(--circle-color);
 }
 
 .services .service-card:hover .card-link i {
   transform: translateX(5px);
 }
 
-.services .service-card.highlighted {
-  background: linear-gradient(160deg, var(--surface-color) 0%, color-mix(in srgb, var(--accent-color), var(--surface-color) 95%) 100%);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 75%);
+.services .service-card .card-header,
+.services .service-card .card-body,
+.services .service-card .card-link {
+  position: relative;
+  z-index: 1;
 }
 
-.services .service-card.highlighted::after {
-  transform: scaleX(1);
+.services .service-card-garments {
+  background-image: url("../img/portfolio/portfolio-1.webp");
+}
+
+.services .service-card-chemicals {
+  background-image: url("../img/portfolio/portfolio-9.webp");
+}
+
+.services .service-card-electronics {
+  background-image: url("../img/portfolio/portfolio-11.webp");
+}
+
+.services .service-card-home {
+  background-image: url("../img/portfolio/portfolio-6.webp");
 }
 
 .services .card-badge {
@@ -1682,7 +1736,7 @@ section,
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  background: color-mix(in srgb, var(--accent-color), transparent 82%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1699,7 +1753,7 @@ section,
   font-size: 42px;
   font-weight: 800;
   font-family: var(--heading-font);
-  color: color-mix(in srgb, var(--default-color), transparent 90%);
+  color: rgba(255, 255, 255, 0.72);
   line-height: 1;
 }
 
@@ -1714,7 +1768,7 @@ section,
 }
 
 .services .card-body h4 a {
-  color: var(--heading-color);
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1726,7 +1780,7 @@ section,
 .services .card-body p {
   font-size: 14px;
   line-height: 1.7;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 16px;
 }
 
@@ -1744,14 +1798,14 @@ section,
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  background: color-mix(in srgb, var(--default-color), transparent 95%);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.12);
   padding: 5px 12px;
   border-radius: 20px;
 }
 
 .services .feature-list li i {
-  color: var(--accent-color);
+  color: #9ee3ff;
   font-size: 12px;
 }
 
@@ -1761,7 +1815,7 @@ section,
   gap: 8px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--heading-color);
+  color: #fff;
   text-decoration: none;
   transition: all 0.3s ease;
 }
