@@ -59,6 +59,12 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
@@ -3168,10 +3174,11 @@ section,
 
 .team .join-team-banner {
   margin-top: 60px;
-  width: calc(100vw - 18vw);
-  margin-left: 0%;
-  transform: translateX(-50%);
-  max-width: 90vw;
+  width: min(100%, 1100px);
+  margin-left: auto;
+  margin-right: auto;
+  transform: none;
+  max-width: 100%;
   background: linear-gradient(120deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 25%) 100%);
   border-radius: 24px;
   padding: 60px;
@@ -4098,8 +4105,17 @@ section,
   background: var(--surface-color);
   border-radius: 30px;
   padding: 40px;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
   box-shadow: 0 25px 80px color-mix(in srgb, var(--default-color), transparent 94%);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+}
+
+.contact .main-contact-wrapper .form-section {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact .info-box {
