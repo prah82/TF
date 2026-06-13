@@ -95,6 +95,10 @@
    * Animation on scroll function and init
    */
   function aosInit() {
+    if (typeof AOS === 'undefined') {
+      return;
+    }
+
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
@@ -107,7 +111,9 @@
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  }
 
   /**
    * Init isotope layout and filters
@@ -117,6 +123,10 @@
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
     const isotopeContainer = isotopeItem.querySelector('.isotope-container');
+
+    if (typeof imagesLoaded === 'undefined' || typeof Isotope === 'undefined' || !isotopeContainer) {
+      return;
+    }
 
     const updatePortfolioItemWidths = function(activeFilter) {
       isotopeContainer.querySelectorAll('.portfolio-item').forEach(function(item) {
@@ -161,15 +171,21 @@
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
    * Init swiper sliders
    */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+      if (typeof Swiper === 'undefined') {
+        return;
+      }
+
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -232,5 +248,55 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  /**
+   * Route enquiry forms to WhatsApp so the admin gets the message on the phone.
+   */
+  document.querySelectorAll('[data-whatsapp-form]').forEach((form) => {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const phone = this.getAttribute('data-whatsapp-number');
+      if (!phone) {
+        return;
+      }
+
+      const name = this.querySelector('[name="name"]')?.value.trim() || 'N/A';
+      const email = this.querySelector('[name="email"]')?.value.trim() || 'N/A';
+      const subject = this.querySelector('[name="subject"]')?.value.trim() || 'N/A';
+      const userPhone = this.querySelector('[name="phone"]')?.value.trim() || 'N/A';
+      const message = this.querySelector('[name="message"]')?.value.trim() || 'N/A';
+
+      const whatsappText = [
+        'New enquiry from the website',
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone: ${userPhone}`,
+        `Subject: ${subject}`,
+        `Message: ${message}`
+      ].join('\n');
+
+      const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappText)}`;
+      const popup = window.open(whatsappUrl, '_blank', 'noopener');
+      if (!popup) {
+        window.location.href = whatsappUrl;
+      }
+
+      const loading = this.querySelector('.loading');
+      const errorMessage = this.querySelector('.error-message');
+      const sentMessage = this.querySelector('.sent-message');
+
+      if (loading) {
+        loading.classList.remove('d-block');
+      }
+      if (errorMessage) {
+        errorMessage.classList.remove('d-block');
+      }
+      if (sentMessage) {
+        sentMessage.classList.add('d-block');
+      }
+    }, true);
+  });
 
 })();

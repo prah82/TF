@@ -1618,10 +1618,35 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.services.section {
+  padding: 42px 0;
+}
+
+.services .section-title {
+  padding-bottom: 34px;
+}
+
+.services .section-title h2 {
+  font-size: 30px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+}
+
+.services .section-title p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services .row.g-4 {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: 1rem;
+}
+
 .services .service-card {
   background-color: var(--surface-color);
-  border-radius: 20px;
-  padding: 30px;
+  border-radius: 14px;
+  padding: 18px;
   height: 100%;
   position: relative;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -1729,12 +1754,12 @@ section,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .services .icon-circle {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: color-mix(in srgb, var(--accent-color), transparent 82%);
   display: flex;
@@ -1744,13 +1769,13 @@ section,
 }
 
 .services .icon-circle i {
-  font-size: 28px;
+  font-size: 21px;
   color: var(--accent-color);
   transition: color 0.3s ease;
 }
 
 .services .service-num {
-  font-size: 42px;
+  font-size: 28px;
   font-weight: 800;
   font-family: var(--heading-font);
   color: rgba(255, 255, 255, 0.72);
@@ -1758,13 +1783,13 @@ section,
 }
 
 .services .card-body {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .services .card-body h4 {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .services .card-body h4 a {
@@ -1778,10 +1803,10 @@ section,
 }
 
 .services .card-body p {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .services .feature-list {
@@ -1790,17 +1815,17 @@ section,
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .services .feature-list li {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.12);
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: 20px;
 }
 
@@ -1813,7 +1838,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: #fff;
   text-decoration: none;
@@ -1838,7 +1863,7 @@ section,
   background: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   border-radius: 16px;
-  padding: 24px;
+  padding: 18px;
   transition: all 0.3s ease;
 }
 
@@ -1920,7 +1945,7 @@ section,
   height: 100%;
   border-radius: 17px;
   background: linear-gradient(160deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), #7c3aed 40%) 100%);
-  padding: 32px 28px;
+  padding: 24px 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2008,29 +2033,61 @@ section,
 }
 
 @media (max-width: 768px) {
+  .services.section {
+    padding: 36px 0;
+  }
+
+  .services .section-title {
+    padding-bottom: 28px;
+  }
+
+  .services .section-title h2 {
+    font-size: 26px;
+  }
+
+  .services .row > [class*="col-"] {
+    display: flex;
+    justify-content: center;
+  }
+
   .services .service-card {
-    padding: 24px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .services .service-card {
+    padding: 16px;
   }
 
   .services .icon-circle {
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
   }
 
   .services .icon-circle i {
-    font-size: 24px;
+    font-size: 19px;
   }
 
   .services .service-num {
-    font-size: 36px;
+    font-size: 26px;
   }
 
   .services .card-body h4 {
-    font-size: 18px;
+    font-size: 15px;
+  }
+
+  .services .card-body p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* Hide the large right-side CTA on phones so the services area stays compact. */
+  .services .col-lg-4 {
+    display: none;
   }
 
   .services .sidebar-cta .cta-inner {
-    padding: 28px 24px;
+    padding: 22px 20px;
   }
 
   .services .sidebar-cta .cta-inner h4 {
@@ -2039,30 +2096,61 @@ section,
 }
 
 @media (max-width: 576px) {
+  .services.section {
+    padding: 30px 0;
+  }
+
+  .services .section-title {
+    padding-bottom: 22px;
+  }
+
+  .services .section-title h2 {
+    font-size: 24px;
+  }
+
   .services .service-card {
-    padding: 20px;
+    max-width: 320px;
+  }
+
+  .services .service-card {
+    min-height: auto;
+    padding: 12px;
   }
 
   .services .card-header {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
   }
 
   .services .icon-circle {
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
   }
 
   .services .icon-circle i {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .services .service-num {
-    font-size: 32px;
+    font-size: 22px;
+  }
+
+  /* Keep the mobile cards short by hiding the long description and chip list. */
+  .services .card-body p,
+  .services .feature-list {
+    display: none;
+  }
+
+  .services .card-body {
+    margin-bottom: 8px;
   }
 
   .services .feature-list li {
     font-size: 12px;
     padding: 4px 10px;
+  }
+
+  .services .card-link {
+    font-size: 11px;
   }
 
   .services .sidebar-service-item {
@@ -2921,8 +3009,8 @@ section,
 
 .team .team-card .avatar-container {
   position: relative;
-  width: 130px;
-  height: 130px;
+  width: 90px;
+  height: 90px;
   margin: 0 auto 25px;
 }
 
@@ -2938,10 +3026,10 @@ section,
 
 .team .team-card .avatar-container .avatar-ring {
   position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
   border: 3px solid var(--accent-color);
   border-radius: 50%;
   opacity: 0.5;

@@ -88,7 +88,9 @@
                 data-bs-ride="carousel" id="heroCarousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
+                    <!-- Load the first hero image eagerly; the rest can wait. -->
                     <img alt="Global commodity supply and shipping" class="d-block w-100 img-fluid"
+                      fetchpriority="high"
                       src="assets/img/about/about-wide-1.webp" />
                     <div class="carousel-caption hero-slide-caption">
                       <span class="category-tag">Garments &amp; Apparel</span>
@@ -98,6 +100,7 @@
                   </div>
                   <div class="carousel-item">
                     <img alt="International trade and logistics network" class="d-block w-100 img-fluid"
+                      loading="lazy"
                       src="assets/img/about/about-wide-3.webp" />
                     <div class="carousel-caption hero-slide-caption">
                       <span class="category-tag">Chemical Raw Materials</span>
@@ -107,6 +110,7 @@
                   </div>
                   <div class="carousel-item">
                     <img alt="International trade and logistics network" class="d-block w-100 img-fluid"
+                      loading="lazy"
                       src="assets/img/about/about-wide-2.webp" />
                     <div class="carousel-caption hero-slide-caption">
                       <span class="category-tag">Electronics &amp; Gadgets</span>
@@ -117,6 +121,7 @@
                   </div>
                   <div class="carousel-item">
                     <img alt="Reliable sourcing and commodity partnerships" class="d-block w-100 img-fluid"
+                      loading="lazy"
                       src="assets/img/about/about-wide-4.webp" />
                     <div class="carousel-caption hero-slide-caption">
                       <span class="category-tag">Home Appliances &amp; Essentials</span>
@@ -161,10 +166,10 @@
                 <img alt="Professional team collaboration" class="img-fluid" loading="lazy"
                   src="assets/img/about/about-14.webp" />
               </div>
-              <div class="gallery-item side-image">
+              <!-- <div class="gallery-item side-image">
                 <img alt="Creative workspace environment" class="img-fluid" loading="lazy"
                   src="assets/img/about/about-square-12.webp" />
-              </div>
+              </div> -->
             </div>
             <!-- <div class="experience-badge">
 <div class="badge-inner">
@@ -230,10 +235,10 @@
         <p>From sourcing to delivery a comprehensive commodity trading solutions for global clients.</p>
       </div><!-- End Section Title -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
           <div class="col-lg-8">
             <div class="row g-4">
-              <div class="col-md-6" data-aos="fade-right" data-aos-delay="150">
+              <div class="col-lg-5 col-md-6" data-aos="fade-right" data-aos-delay="150">
                 <div class="service-card service-card-garments">
                   <!-- <div class="card-badge">Popular</div> -->
                   <div class="card-header">
@@ -257,7 +262,7 @@
                   </a>
                 </div>
               </div><!-- End Service Card -->
-              <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+              <div class="col-lg-5 col-md-6" data-aos="fade-left" data-aos-delay="200">
                 <div class="service-card service-card-chemicals">
                   <div class="card-header">
                     <div class="icon-circle">
@@ -280,7 +285,7 @@
                   </a>
                 </div>
               </div><!-- End Service Card -->
-              <div class="col-md-6" data-aos="fade-right" data-aos-delay="250">
+              <div class="col-lg-5 col-md-6" data-aos="fade-right" data-aos-delay="250">
                 <div class="service-card service-card-electronics">
                   <div class="card-header">
                     <div class="icon-circle">
@@ -303,7 +308,7 @@
                   </a>
                 </div>
               </div><!-- End Service Card -->
-              <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
+              <div class="col-lg-5 col-md-6" data-aos="fade-left" data-aos-delay="300">
                 <div class="service-card service-card-home">
                   <div class="card-header">
                     <div class="icon-circle">
@@ -364,7 +369,7 @@
       </div>
     </section><!-- /Services Section -->
     <!-- Why Us Section -->
-    <section class="why-us section" id="why-us">
+    <!-- <section class="why-us section" id="why-us">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Why Choose Us</h2>
@@ -490,16 +495,16 @@
 </div>
 </div> -->
       </div>
-    </section><!-- /Why Us Section -->
+    </section> --> <!-- /Why Us Section -->
     <!-- Portfolio Section commented out -->
     <!-- Testimonials Section -->
     <section class="testimonials section dark-background" id="testimonials">
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <!-- <div class="container section-title" data-aos="fade-up">
         <h2>Mission &amp; Values</h2>
         <p>The principles that guide every shipment and partnership</p>
-      </div><!-- End Section Title -->
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      </div>End Section Title -->
+      <!-- <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="testimonials-slider swiper init-swiper">
           <script class="swiper-config" type="application/json">
             {
@@ -556,9 +561,10 @@
                     <i class="bi bi-patch-check-fill"></i>
                   </div>
                 </div>
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
+              </div> -->
+            <!-- </div> -->
+            <!-- End testimonial item -->
+            <!-- <div class="swiper-slide">
               <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="testimonial-quote">
                   <i class="bi bi-quote"></i>
@@ -588,9 +594,10 @@
                     <i class="bi bi-patch-check-fill"></i>
                   </div>
                 </div>
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
+              </div> -->
+            <!-- </div> -->
+            <!-- End testimonial item -->
+            <!-- <div class="swiper-slide">
               <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="testimonial-quote">
                   <i class="bi bi-quote"></i>
@@ -620,9 +627,10 @@
                     <i class="bi bi-patch-check-fill"></i>
                   </div>
                 </div>
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
+              </div> -->
+            <!-- </div> -->
+            <!-- End testimonial item -->
+            <!-- <div class="swiper-slide">
               <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
                 <div class="testimonial-quote">
                   <i class="bi bi-quote"></i>
@@ -651,9 +659,10 @@
                     <i class="bi bi-patch-check-fill"></i>
                   </div>
                 </div>
-              </div>
-            </div><!-- End testimonial item -->
-            <div class="swiper-slide">
+              </div> -->
+            <!-- </div> -->
+            <!-- End testimonial item -->
+            <!-- <div class="swiper-slide">
               <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
                 <div class="testimonial-quote">
                   <i class="bi bi-quote"></i>
@@ -682,16 +691,18 @@
                     <i class="bi bi-patch-check-fill"></i>
                   </div>
                 </div>
-              </div>
-            </div><!-- End testimonial item -->
-          </div>
+              </div> -->
+            <!-- </div> -->
+            <!-- End testimonial item -->
+          <!-- </div>
           <div class="swiper-navigation-wrapper">
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           </div>
         </div>
       </div>
-    </section><!-- /Testimonials Section -->
+    </section> -->
+    <!-- /Testimonials Section -->
     <!-- Team Section -->
     <section class="team section" id="team">
       <!-- Section Title -->
@@ -1208,7 +1219,7 @@
                       <i class="bi bi-envelope-heart"></i>
                     </div>
                     <h5>Drop Us a Line</h5>
-                    <p>support@example.com</p>
+                    <p>Www.tideforgeglobal.com</p>
                     <span class="availability">Quick replies within 3 hours</span>
                   </div>
                 </div>
@@ -1218,7 +1229,7 @@
                       <i class="bi bi-phone-vibrate"></i>
                     </div>
                     <h5>Give Us a Ring</h5>
-                    <p>+1 (555) 234-8901</p>
+                    <p>+91 84259 35510</p>
                     <span class="availability">Mon-Fri 8AM - 7PM CST</span>
                   </div>
                 </div>
@@ -1228,7 +1239,7 @@
                       <i class="bi bi-pin-map"></i>
                     </div>
                     <h5>Stop By</h5>
-                    <p>1523 Oak Avenue, Chicago, IL 60614</p>
+                    <p>Address: Groma House, Office No: 3/8, B Wing, Plot No 14C, Sector 19, Vashi, Navi Mumbai - 400 705, Maharshatra India</p>
                     <span class="availability">Walk-ins welcome</span>
                   </div>
                 </div>
@@ -1239,7 +1250,7 @@
                   <p>Tell us about the commodity, quantity and destination — our trade desk will respond with a tailored
                     quotation within 24 hours.</p>
                 </div>
-                <form action="forms/contact.php" class="php-email-form" method="post">
+                <form action="#" class="php-email-form" data-whatsapp-form data-whatsapp-number="918425935510" method="post">
                   <div class="row gy-3">
                     <div class="col-md-4">
                       <div class="input-group-custom">
@@ -1261,6 +1272,13 @@
                         <input class="form-control" name="subject" placeholder="Subject" required="" type="text" />
                       </div>
                     </div>
+                    <div class="col-md-4">
+                      <div class="input-group-custom">
+                        <i class="bi bi-telephone"></i>
+                        <input autocomplete="tel" class="form-control" name="phone" placeholder="Phone Number"
+                          type="tel" />
+                      </div>
+                    </div>
                     <div class="col-12">
                       <div class="input-group-custom textarea-group">
                         <i class="bi bi-chat-text"></i>
@@ -1272,11 +1290,11 @@
                   </div>
                   <div class="form-footer">
                     <div class="form-messages">
-                      <div class="loading">Loading</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div>
-                    <button class="btn-submit" type="submit"><i class="bi bi-rocket-takeoff"></i> Send Message</button>
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Opening WhatsApp chat with the admin...</div>
+                  </div>
+                    <button class="btn-submit" type="submit"><i class="bi bi-whatsapp"></i> Send on WhatsApp</button>
                   </div>
                 </form>
               </div>
@@ -1441,11 +1459,7 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- The other vendor libraries are not needed on this page, so they stay unloaded here. -->
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 </body>
