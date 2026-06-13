@@ -4106,14 +4106,14 @@ section,
   border-radius: 30px;
   padding: 40px;
   width: 100%;
-  max-width: 980px;
+  max-width: 1140px;
   margin: 0 auto;
   box-shadow: 0 25px 80px color-mix(in srgb, var(--default-color), transparent 94%);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
 }
 
 .contact .main-contact-wrapper .form-section {
-  max-width: 820px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -4207,6 +4207,18 @@ section,
 
 .contact .form-section .php-email-form .input-group-custom {
   position: relative;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .contact .form-section .php-email-form .row.gy-3 > [class*="col-md-4"] {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+
+  .contact .form-section .php-email-form .row.gy-3 > .col-12 {
+    width: 100%;
+  }
 }
 
 .contact .form-section .php-email-form .input-group-custom i {
